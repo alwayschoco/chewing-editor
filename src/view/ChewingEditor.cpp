@@ -218,4 +218,7 @@ void ChewingEditor::setupAboutWidget()
    connect(
         ui_.get()->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt())
    );
+   connect(
+        ui_.get()->actionAbout, SIGNAL(triggered()), qApp, SLOT(aboutQt())
+    );
 }

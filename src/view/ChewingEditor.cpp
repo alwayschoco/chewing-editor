@@ -225,6 +225,6 @@ void ChewingEditor::setupAboutWidget()
 
 
    connect(
-        ui_.get()->actionAbout, SIGNAL(triggered()), AboutDialog_, SLOT(AboutDialog::showupAboutDialog())
+        ui_.get()->actionAbout, SIGNAL(triggered()), AboutDialog_, SLOT(showupAboutDialog())
     );
 }

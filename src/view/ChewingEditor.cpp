@@ -22,6 +22,7 @@
 
 #include <QtGui>
 #include <QDebug>
+#include <QMessageBox>
 
 #include "ChewingImporter.h"
 #include "ChewingExporter.h"
@@ -32,6 +33,7 @@ ChewingEditor::ChewingEditor(QWidget *parent)
     ,model_{new UserphraseModel{this}}
     ,proxyModel_{new UserphraseSortFilterProxyModel{this}}
     ,fileDialog_{new QFileDialog{this}}
+    ,AboutDialog_{new AboutDialog{this}}
 {
     ui_.get()->setupUi(this);
 
@@ -115,6 +117,8 @@ void ChewingEditor::finishFileSelection(const QString& file)
         Q_ASSERT(!"Unknown DialogType");
     }
 }
+
+
 
 void ChewingEditor::importUserphrase(const QString& file)
 {
@@ -218,7 +222,9 @@ void ChewingEditor::setupAboutWidget()
    connect(
         ui_.get()->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt())
    );
+
+
    connect(
-        ui_.get()->actionAbout, SIGNAL(triggered()), qApp, SLOT(aboutQt())
+        ui_.get()->actionAbout, SIGNAL(triggered()), AboutDialog_, SLOT(AboutDialog::showupAboutDialog())
     );
 }

@@ -27,6 +27,7 @@
 #include "UserphraseDialog.h"
 #include "Notification.h"
 #include "UserphraseSortFilterProxyModel.h"
+#include "AboutDialog.h"
 
 namespace Ui {
     class ChewingEditor;
@@ -46,6 +47,7 @@ public slots:
     void selectImportFile();
     void selectExportFile();
     void finishFileSelection(const QString& file);
+    //void showupAboutDialog();
 
 private:
     enum DialogType {
@@ -73,4 +75,5 @@ private:
 
     QFileDialog *fileDialog_;
     DialogType dialogType_;
+    AboutDialog *AboutDialog_;
 };

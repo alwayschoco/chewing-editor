@@ -25,9 +25,9 @@
 #include <QMainWindow>
 
 #include "UserphraseDialog.h"
+#include "AboutDialog.h"
 #include "Notification.h"
 #include "UserphraseSortFilterProxyModel.h"
-#include "AboutDialog.h"
 
 namespace Ui {
     class ChewingEditor;

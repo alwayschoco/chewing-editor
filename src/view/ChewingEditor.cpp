@@ -22,7 +22,6 @@
 
 #include <QtGui>
 #include <QDebug>
-#include <QMessageBox>
 
 #include "ChewingImporter.h"
 #include "ChewingExporter.h"

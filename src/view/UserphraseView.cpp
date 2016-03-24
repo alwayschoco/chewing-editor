@@ -69,10 +69,12 @@ void UserphraseView::addPhrase(int result)
     std::shared_ptr<QString> bopomofo{new QString(UserphraseDialog_->getBopomofo())};
 
     qDebug() << "Add" << *phrase.get() << "(" << *bopomofo.get() << ")";
+        
+    
 
-    if (dialogType_ == DIALOG_MODIFY) {
+    if (dialogType_ == DIALOG_MODIFY && phrase.get()->length()!= 0 && bopomofo.get()->length() != 0)  {
         remove();
-    }
+   }
 
     emit model()->add(phrase, bopomofo);
 }
